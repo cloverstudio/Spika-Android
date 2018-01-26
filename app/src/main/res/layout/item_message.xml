@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/parentView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/trans"
+    android:paddingTop="0dp">
+
+    <RelativeLayout
+        android:id="@+id/myRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+
+        <com.clover_studio.spikachatmodule.view.roundimage.RoundImageView
+            android:id="@+id/myAvatar"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:paddingTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"/>
+
+        <com.clover_studio.spikachatmodule.view.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/myNameAndTime"
+            android:layout_toLeftOf="@id/myAvatar"
+            android:textSize="12sp"
+            android:paddingTop="10dp"
+            android:textColor="@color/devil_gray_color"
+            android:layout_marginRight="5dp"
+            />
+
+        <View
+            android:id="@+id/myMessageStatus"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/myAvatar"
+            android:layout_marginRight="28dp"
+            />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/myCardView"
+            style="@style/CardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="35dp"
+            android:layout_toLeftOf="@+id/myMessageStatus"
+            android:layout_below="@id/myNameAndTime"
+            app:cardBackgroundColor="@color/my_message_background_color"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true"
+            >
+
+            <com.clover_studio.spikachatmodule.view.CustomTextView
+                android:id="@+id/myMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/my_message_text_color"
+                android:textSize="@dimen/my_text_size"/>
+
+            <RelativeLayout
+                android:id="@+id/myImageLayout"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/myImage"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:id="@+id/myImageInfo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_info_message"
+                    android:layout_alignTop="@id/myImage"
+                    android:layout_alignRight="@id/myImage"
+                    android:background="@drawable/selector_trans_white_to_white"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/myFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/myFileIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_file_label_white"/>
+
+                <com.clover_studio.spikachatmodule.view.CustomTextView
+                    android:id="@+id/myFileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/myFileIcon"
+                    android:textColor="@color/my_message_text_color"
+                    android:textSize="@dimen/my_text_size"/>
+
+                <com.clover_studio.spikachatmodule.view.CustomTextView
+                    android:id="@+id/myFileSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myFileName"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/myFileIcon"
+                    android:textColor="@color/my_message_text_color"
+                    android:textSize="@dimen/my_text_size"/>
+
+                <com.clover_studio.spikachatmodule.view.CustomTextView
+                    android:id="@+id/myFileDownload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myFileSize"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/myFileIcon"
+                    android:text="@string/download"
+                    android:textColor="@color/my_message_text_color"
+                    android:textSize="@dimen/my_text_size"/>
+
+                <ImageView
+                    android:id="@+id/myFileInfo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_info_message"
+                    android:background="@drawable/selector_trans_white_to_white"
+                    />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/youRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp">
+
+        <com.clover_studio.spikachatmodule.view.roundimage.RoundImageView
+            android:id="@+id/youAvatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/youNameAndTime"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"/>
+
+        <com.clover_studio.spikachatmodule.view.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/youNameAndTime"
+            android:layout_toRightOf="@id/youAvatar"
+            android:layout_marginTop="10dp"
+            android:text="temp"
+            android:textSize="12sp"
+            android:textColor="@color/devil_gray_color"
+            android:layout_marginLeft="5dp"
+            />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/youCardView"
+            style="@style/CardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="35dp"
+            android:layout_below="@id/youNameAndTime"
+            android:layout_toRightOf="@+id/youAvatar"
+            app:cardBackgroundColor="@color/you_message_background_color"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true"
+            >
+
+            <com.clover_studio.spikachatmodule.view.CustomTextView
+                android:id="@+id/youMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/you_message_text_color"
+                android:textSize="@dimen/you_text_size"/>
+
+            <RelativeLayout
+                android:id="@+id/youImageLayout"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/youImage"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:id="@+id/youImageInfo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_info_message_white"
+                    android:layout_alignTop="@id/youImage"
+                    android:layout_alignRight="@id/youImage"
+                    android:background="@drawable/selector_trans_default_to_white"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/youFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/youFileIcon"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_file_label"/>
+
+                <com.clover_studio.spikachatmodule.view.CustomTextView
+                    android:id="@+id/youFileName"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/youFileIcon"
+                    android:textColor="@color/you_message_text_color"
+                    android:textSize="@dimen/my_text_size"/>
+
+                <com.clover_studio.spikachatmodule.view.CustomTextView
+                    android:id="@+id/youFileSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/youFileName"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/youFileIcon"
+                    android:textColor="@color/you_message_text_color"
+                    android:textSize="@dimen/my_text_size"/>
+
+                <com.clover_studio.spikachatmodule.view.CustomTextView
+                    android:id="@+id/youFileDownload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/youFileSize"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/youFileIcon"
+                    android:text="@string/download"
+                    android:textColor="@color/you_message_text_color"
+                    android:textSize="@dimen/my_text_size"/>
+
+                <ImageView
+                    android:id="@+id/youFileInfo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_info_message_white"
+                    android:background="@drawable/selector_trans_default_to_white"
+                    />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
